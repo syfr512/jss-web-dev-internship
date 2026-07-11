@@ -1,102 +1,255 @@
-# Week 1 Comprehensive Site Audit & Weekly Report
-**Date:** July 10, 2026  
-**Auditor:** Faizian Ahmed Yousuf  
-**Track:** Web Development & UI/UX Internship
+# JobSkillShare Week 1 UX Audit and Weekly Report
+
+**Intern:** Faizian Ahmed Yousuf
+**Internship Track:** Web Development and UI/UX
+**Company Website Audited:** https://www.jobskillshare.org/
+**Reporting Week:** Week 1
+**Submission Date:** July 11, 2026
 
 ---
 
-## 🗺️ Monday's Deliverable: JSS Architecture Map
+## 1. Weekly Task Summary
 
-- Homepage (jobskillshare.org)
-  ├── Hero Section (Value Prop, Primary CTAs: "Explore Programs", "Watch Preview")
-  ├── Step-by-Step Training Roadmap ("How It Works" 1-5 workflow)
-  ├── Program/Course Catalog Matrix
-  │   ├── Modern IT Support Certificate Program (Entry-Level)
-  │   ├── Systems Engineer Certificate Program (Advanced)
-  │   ├── Cloud Engineer Certificate Program (Advanced)
-  │   ├── Cybersecurity Analyst Certificate Program (Advanced)
-  │   ├── AI Engineering & Automation Certificate Program (Advanced)
-  │   └── Freelancer Certificate Program (Basic-to-Advanced)
-  ├── Video Preview & Learning Delivery Showcase (Lecture + Lab Demos)
-  ├── Membership Tiers & Access Gates
-  │   ├── Individual Premium Membership
-  │   └── B2B / Institutional Bulk Licensing
-  └── Global Footer (Programs Links, Discord Community, Legal Policies)
+This report compiles the Week 1 internship tasks assigned for the Web Development and UI/UX track. The main focus was to review the JobSkillShare website, understand its structure, audit the user experience across key pages, and prepare a prioritized list of improvements that can support future prototype work.
+
+| Day | Assigned Task | Output Completed |
+| --- | --- | --- |
+| Monday | Set up the development environment and review website structure, navigation, and visual hierarchy. | Development setup completed and website architecture mapped. |
+| Tuesday | Conduct a UX audit of the homepage, including CTA placement, above-the-fold content, navigation clarity, mobile responsiveness, and load speed. | Homepage UX audit completed with screenshots and recommendations. |
+| Wednesday | Audit program/course catalog pages for content completeness, orientation, program descriptions, enrollment flow, and visual layout. | Program and catalog page audit completed. |
+| Thursday | Audit membership and registration pages, identify sign-up friction points, missing trust signals, and suggested changes. | Membership and registration audit completed. |
+| Friday | Compile one top-priority list from the audits and prepare a single weekly report. | Top 10 priority list and final weekly report completed. |
 
 ---
 
-## 📱 Tuesday's Deliverable: JSS Homepage UX Audit
-**Viewport:** Mobile (Emulated Pixel 8/9 Chrome Android 14)
+## 2. Development Environment Setup
 
-### Issue 1: Above-the-Fold Visual Clutter & Value Proposition
-* **Analysis Area:** 5-Second Clarity & Hero Section
-* **Screenshot:** ![Above the Fold](./assets/homepage-hero-mobile.png)
-* **Problem Description:** The primary hero headline is surrounded by multiple lines of secondary descriptive text on small mobile displays. This layout creates visual noise that competes for the user's attention and delays clear understanding of the site's primary purpose.
-* **Recommended Fix:** Consolidate the text elements above the fold. Use a single bold value proposition headline paired with immediate action buttons to keep the initial viewport clear and direct.
+The basic development and audit environment was prepared for Week 1 work.
 
-### Issue 2: Mobile Navigation Menu Density
-* **Analysis Area:** Navigation Clarity & Responsiveness
-* **Screenshot:** ![Mobile Menu](./assets/mobile-nav-menu.png)
-* **Problem Description:** When opening the hamburger menu, users face a long list of specific certification tracks. Scrolling through this extensive menu on a mobile screen causes layout friction and makes it difficult to find top-level categories.
-* **Recommended Fix:** Replace the flat text list with an interactive accordion menu structure. Hide specific training paths until a user explicitly expands a main category header.
+- VS Code was used for organizing notes and report files.
+- Browser DevTools were used for mobile viewport testing and performance review.
+- A GitHub repository was created for internship documentation.
+- Screenshots were collected for the main audit findings.
+- Markdown and PDF report formats were prepared for submission.
 
-### Issue 3: Heavy Asset Payload & Missing Optimization
-* **Analysis Area:** Performance Optimization (Network Tab)
-* **Screenshot:** ![Network Metrics](./assets/network-performance-audit.png)
-* **Problem Description:** While the page successfully finishes initialization in 2.18 seconds, the overall transferred payload size is a massive 7.13 MB. DevTools reveals that two core theme assets (`JSSBlack.png` at 2.17 MB and `logo.png` at 2.22 MB) are being served completely uncompressed to mobile viewports.
-* **Recommended Fix:** Compress these images and convert them to modern web formats like `.webp` or `.avif`. This architectural switch will drop the asset sizes from megabytes down to kilobytes, significantly cutting data usage for mobile users.
+GitHub repository: https://github.com/syfr512/jss-web-dev-internship
 
 ---
 
-## 🎓 Wednesday's Deliverable: Program & Catalog Pages UX Audit
+## 3. Website Structure and Navigation Review
 
-### Issue 1: Course Catalog Filter Visual Hierarchy
-* **Analysis Area:** Catalog Layout & Navigation Clarity
-* **Screenshot:** ![Catalog Mobile](./assets/homepage-catalog-mobile.jpg)
-* **Problem Description:** The mobile catalog displays certification paths vertically with large cards. While information density is good, there is a lack of quick-filtering options (e.g., filtering by "Entry-Level" vs "Advanced") at the top of the mobile viewport, forcing users to scroll past irrelevant programs to find their track.
-* **Recommended Fix:** Implement a sticky horizontal pill-filter component at the top of the mobile catalog page (`flex-direction: row; overflow-x: auto;`) allowing instant filtering by career tier.
+The website is structured around IT training programs, hands-on labs, membership access, previews, testimonials, and login/member entry points.
 
-### Issue 2: Deep-Dive Program Page Content Density
-* **Analysis Area:** Content Completeness & Program Descriptions
-* **Screenshot:** ![Cybersecurity Program](./assets/program-page-cybersecurity.png)
-* **Problem Description:** The individual program page provides excellent technical depth (e.g., hours of training, explicit topics like Linux/Security+). However, on mobile viewports, the text block describing the target audience is highly dense, making it difficult for a user to scan quickly.
-* **Recommended Fix:** Refactor long text paragraphs into high-contrast bulleted layout grids or icon-driven callouts to improve mobile readability.
+```text
+Homepage
+|-- Hero section
+|   |-- Main value proposition
+|   |-- Primary CTA: Explore Programs
+|   |-- Secondary CTA: Watch Preview
+|-- Training roadmap
+|   |-- Choose a Program
+|   |-- Follow the Roadmap
+|   |-- Watch and Learn
+|   |-- Practice in Labs
+|   |-- Anytime Access
+|-- Program catalog
+|   |-- Modern IT Support Certificate Program
+|   |-- Systems Engineer Certificate Program
+|   |-- Cloud Engineer Certificate Program
+|   |-- Cybersecurity Analyst Certificate Program
+|   |-- AI Engineering and Automation Certificate Program
+|   |-- Freelancer Certificate Program
+|-- Preview and learning sections
+|-- Membership and registration flow
+|-- Footer
+    |-- Program links
+    |-- Mission
+    |-- Membership
+    |-- Free Interview Prep
+    |-- Terms
+    |-- Social links
+```
 
-### Issue 3: Enrollment Flow Multi-Step Friction
-* **Analysis Area:** Enrollment Flow & Primary CTAs
-* **Problem Description:** Clicking "Start Learning" or "Open Program" initiates an enrollment loop that routes users through multi-tier membership selection rather than a direct, single-click enrollment path for that specific certification track.
-* **Recommended Fix:** Implement a direct checkout/enrollment modal or bypass route that binds the specific course selection directly to the registration payload.
+### Initial Observations
+
+- The homepage communicates that JobSkillShare provides job-ready IT training with labs and simulations.
+- The mobile layout is responsive and the main buttons are visible above the fold.
+- The program catalog provides useful information such as target career paths, estimated hours, and program levels.
+- Some content sections are dense on mobile and would benefit from stronger scanning patterns.
+- The enrollment and membership flow can be clearer for users who arrive from a specific program page.
 
 ---
 
-## 🔒 Thursday's Deliverable: Membership & Registration UX Audit
+## 4. Tuesday Audit: Homepage UX
 
-### Issue 1: Registration Form Input Overhead
-* **Analysis Area:** Sign-up Flow Friction Points
-* **Screenshot:** ![Membership Signup](./assets/membership-signup.png)
-* **Problem Description:** The initial registration sequence requires multiple manual text inputs on mobile viewports. High form-field counts on mobile devices drastically lower conversion rates due to typing friction.
-* **Recommended Fix:** Implement OAuth2 Single Sign-On (SSO) integrations (Google, GitHub, LinkedIn) at the top of the form to reduce registration friction to a single tap.
+### What Works Well
 
-### Issue 2: Absence of Immediate Trust Signals on Checkout Viewports
-* **Analysis Area:** Security Verification & Trust Signals
-* **Problem Description:** The mobile membership tiers page displays financial commitments clearly, but lacks immediate, localized trust verification graphics (e.g., secure checkout badges, explicit money-back guarantees, or real-time student satisfaction metrics) directly adjacent to the payment CTA.
-* **Recommended Fix:** Append explicit micro-copy trust signals directly below the main checkout buttons (e.g., "🔒 SSL Secured & Encrypted | 30-Day Refund Policy").
+- The homepage has a clear headline: job-ready skills with hands-on labs.
+- Primary and secondary CTAs are visible near the top of the mobile viewport.
+- The mobile menu is simple and easy to open.
+- The page uses a modern visual style with readable spacing and clear button contrast.
+
+### Issue 1: CTA Choice Could Better Match User Intent
+
+**Audit Area:** CTA placement and above-the-fold content
+**Screenshot:**
+![Homepage hero mobile](./assets/homepage-hero-mobile.png)
+
+**Problem:**
+The hero section includes "Explore Programs" and "Watch Preview", which are helpful actions. However, users who already know they want to join do not immediately see a direct membership or sign-up action above the fold.
+
+**Recommended Fix:**
+Keep "Explore Programs" as the main CTA, but add a clear secondary path such as "Become a Member" or "Start Free" in the hero or mobile menu. This gives both new visitors and ready-to-register users a direct route.
+
+### Issue 2: Hero Section Has Several Competing Elements on Mobile
+
+**Audit Area:** 5-second clarity and visual hierarchy
+**Screenshot:**
+![Homepage hero mobile](./assets/homepage-hero-mobile.png)
+
+**Problem:**
+The main message is understandable, but the hero also includes supporting text, two buttons, benefit chips, and the beginning of the roadmap section. On smaller mobile screens, this can make the first screen feel busy.
+
+**Recommended Fix:**
+Prioritize the headline, one short supporting line, and the primary CTA. Move secondary proof points and roadmap details slightly lower so the first view is cleaner.
+
+### Issue 3: Large Image Assets Increase Mobile Payload
+
+**Audit Area:** Load speed and performance
+**Screenshot:**
+![Network performance audit](./assets/network-performance-audit.png)
+
+**Problem:**
+The DevTools network capture showed 23 requests and approximately 7.13 MB transferred. The page loaded in about 2.18 seconds in the captured test, but large image assets such as logo files increase the mobile data cost.
+
+**Recommended Fix:**
+Compress large PNG/JPG files, serve WebP or AVIF formats where possible, and use responsive image sizes for mobile screens. This will improve loading on slower connections.
+
+### Issue 4: Mobile Navigation Is Simple but Could Support Faster Discovery
+
+**Audit Area:** Navigation clarity
+**Screenshot:**
+![Mobile navigation menu](./assets/mobile-nav-menu.png)
+
+**Problem:**
+The mobile menu is clean, but "Programs" is only one general link. Users who are looking for a specific career path still need to navigate through the catalog after opening the menu.
+
+**Recommended Fix:**
+Add a simple expandable "Programs" section or a direct anchor list for major career paths. This would improve discovery without making the menu crowded.
 
 ---
 
-## 📊 Friday's Deliverable: Top 10 Prioritized Engineering Backlog
+## 5. Wednesday Audit: Program and Course Catalog Pages
 
-This comprehensive index compiles actionable improvement opportunities identified during the Week 1 site audits of jobskillshare.org, prioritized by engineering impact and user acquisition value.
+### What Works Well
 
-| Priority | System Element | Core Issue Identification | Recommended Fix Strategy | Impact Tier |
-| :--- | :--- | :--- | :--- | :--- |
-| **1** | Performance | Uncompressed raw asset payload (7.13MB total transfer) | Batch compress and migrate core PNG/JPG assets to `.webp` format. | **Critical** (Speed/SEO) |
-| **2** | Registration | Manual form-fill overhead on mobile viewports | Deploy OAuth2 protocols for single-tap Google/GitHub registration. | **High** (Conversion) |
-| **3** | Navigation | Text-heavy mobile hamburger menu layout | Refactor navigation layout into nested accordion interface panels. | **High** (UX Friction) |
-| **4** | Trust | Missing security validation assets near checkout CTAs | Append secure transaction micro-copy directly below conversion paths. | **Medium** (Trust Dropoff) |
-| **5** | Catalog | Lack of instant categorical sorting mechanics on mobile | Introduce a sticky horizontal filtering layout ribbon for career paths. | **Medium** (Discovery) |
-| **6** | Hero Space | Above-the-fold content crowding on narrow displays | Prune secondary taglines to highlight a singular, clean core value proposition. | **Medium** (Clarity) |
-| **7** | Accessibility | Small tap target sizes for "Open Program" text links | Increase button and text link bounds to a minimum of 48x48px for mobile screens. | **Medium** (UX Polish) |
-| **8** | Interaction | Footer element layout density scales poorly on mobile layout | Group extensive footer links into collapsible drop-menus to lower scroll depth. | **Low** (Layout Polish) |
-| **9** | Course Pages | Long prose blocks describing program scope | Break dense paragraphs into visual check-lists and icon feature grids. | **Low** (Readability) |
-| **10** | Interaction | "Start Learning" loops directly into tier selectors | Configure parameter passing to bind chosen course targets directly to checkout. | **Low** (Flow Polish) |
+- Program cards clearly show the program name, target audience, level, estimated hours, and key skills.
+- Individual program pages include useful technical context and explain the learning path.
+- The "Start Learning" action is visible on program pages.
+
+### Issue 1: Catalog Needs Faster Filtering on Mobile
+
+**Audit Area:** Catalog layout and orientation
+**Screenshot:**
+![Program catalog mobile](./assets/homepage-catalog-mobile.jpg)
+
+**Problem:**
+The catalog stacks program cards vertically on mobile. This is readable, but users may need to scroll through several cards before finding the right level or career path.
+
+**Recommended Fix:**
+Add sticky horizontal filters such as "Entry-Level", "Basic to Advanced", "Advanced", "Cybersecurity", "Cloud", and "IT Support". This would help users narrow the catalog quickly.
+
+### Issue 2: Program Descriptions Are Useful but Dense
+
+**Audit Area:** Program description and visual layout
+**Screenshot:**
+![Cybersecurity program page](./assets/program-page-cybersecurity.png)
+
+**Problem:**
+The cybersecurity program page gives helpful details, but paragraph-style descriptions can become dense on mobile screens. Users scanning quickly may miss key points such as target role, prerequisites, hours, and outcomes.
+
+**Recommended Fix:**
+Break long descriptions into compact sections such as "Best For", "Skills Covered", "Estimated Time", "Practice Labs", and "Outcome". Use bullets or small cards for faster scanning.
+
+### Issue 3: Enrollment Flow Should Preserve Program Context
+
+**Audit Area:** Enrollment flow
+**Problem:**
+When a user chooses a program and then moves toward membership or registration, the flow should keep reminding the user which program they selected. Without this context, the user may feel they were moved into a general membership process.
+
+**Recommended Fix:**
+Carry the selected program name into the membership/registration screen. Example: "You selected Cybersecurity Analyst Certificate Program." This confirms the user's choice and reduces uncertainty.
+
+---
+
+## 6. Thursday Audit: Membership and Registration Pages
+
+### What Works Well
+
+- The selected membership level and price are visible before account creation.
+- The form fields are clearly labeled.
+- A chat/help button is available, which can support users who are confused during sign-up.
+
+### Issue 1: Registration Form Has High Manual Input Effort
+
+**Audit Area:** Sign-up friction
+**Screenshot:**
+![Membership signup form](./assets/membership-signup.png)
+
+**Problem:**
+The mobile registration form asks for username, password, confirm password, email address, and confirm email address. This creates typing friction on mobile and increases the chance of input errors.
+
+**Recommended Fix:**
+Reduce repeated fields where possible and add optional sign-up methods such as Google, LinkedIn, or GitHub. At minimum, use clear inline validation so users can fix errors immediately.
+
+### Issue 2: Discount Code Appears Before Account Creation
+
+**Audit Area:** Registration flow clarity
+**Screenshot:**
+![Membership signup form](./assets/membership-signup.png)
+
+**Problem:**
+The discount code prompt appears before the account information section. This may interrupt users who do not have a discount code and are simply trying to register.
+
+**Recommended Fix:**
+Collapse the discount code field by default and place it closer to the payment step. This keeps the registration path focused.
+
+### Issue 3: Trust Signals Should Be Closer to Payment and Registration CTAs
+
+**Audit Area:** Trust and confidence
+**Problem:**
+The membership flow would benefit from clearer trust signals near the action area. Users may want reassurance about secure payment, refund/cancellation policy, support availability, and what access is included.
+
+**Recommended Fix:**
+Add short trust microcopy near the membership and payment buttons, such as:
+
+- Secure checkout
+- Cancel anytime
+- Support available
+- Access to video courses and practice labs
+- Trusted by members from many countries
+
+---
+
+## 7. Top 10 Priority Improvements
+
+| Priority | Area | Issue | Recommended Change | Impact |
+| --- | --- | --- | --- | --- |
+| 1 | Performance | Mobile page transfers large image assets. | Compress images and use WebP/AVIF with responsive sizes. | High |
+| 2 | Registration | Sign-up requires repeated manual fields. | Reduce duplicate fields and add optional social sign-in. | High |
+| 3 | Enrollment | Program context can be lost during membership registration. | Carry selected program name into checkout/registration screens. | High |
+| 4 | Homepage CTA | Ready-to-join users do not get a direct membership CTA above the fold. | Add "Become a Member" or "Start Free" path in hero/menu. | Medium-High |
+| 5 | Catalog | Users must scroll through all programs on mobile. | Add filters by level, role, or category. | Medium-High |
+| 6 | Trust | Trust signals are not close enough to payment decisions. | Add secure checkout, cancellation, support, and access details near CTAs. | Medium |
+| 7 | Program Pages | Important details are buried in paragraph text. | Convert key details into bullets/cards for mobile scanning. | Medium |
+| 8 | Navigation | Mobile menu has a general Programs link only. | Add expandable program shortcuts or anchor links. | Medium |
+| 9 | Registration Flow | Discount code prompt interrupts the account form. | Collapse discount code by default and move it closer to payment. | Low-Medium |
+| 10 | Accessibility | Some touch targets and links should be checked across mobile sizes. | Maintain at least 44-48px touch targets and strong focus states. | Low-Medium |
+
+---
+
+## 8. Overall Conclusion
+
+The JobSkillShare website already has a strong foundation: it explains the training focus, shows clear program options, includes mobile-friendly layouts, and provides direct actions for exploring courses. The main improvement opportunities are in reducing friction, improving mobile scanning, making enrollment context clearer, and optimizing performance for mobile visitors.
+
+The most important changes to prioritize are image optimization, a smoother registration flow, clearer program-to-membership continuity, stronger trust signals near payment actions, and faster filtering within the program catalog. These improvements would make the site easier to understand, faster to use, and more convincing for new members.

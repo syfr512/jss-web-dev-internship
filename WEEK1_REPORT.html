@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JobSkillShare Week 1 UX Audit and Weekly Report</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f7fb;
+      color: #172033;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.48;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 18mm;
+      box-shadow: 0 12px 38px rgba(15, 23, 42, 0.14);
+    }
+
+    header {
+      border-bottom: 3px solid #2598dc;
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #2598dc;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: #06264a;
+      font-size: 25pt;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 18px;
+      margin-top: 16px;
+      color: #46556d;
+      font-size: 9.5pt;
+    }
+
+    .meta strong {
+      color: #172033;
+    }
+
+    h2 {
+      margin: 26px 0 10px;
+      color: #0c345f;
+      font-size: 15pt;
+      line-height: 1.18;
+      border-bottom: 1px solid #d9e3f0;
+      padding-bottom: 6px;
+    }
+
+    h3 {
+      margin: 18px 0 8px;
+      color: #0f2d4f;
+      font-size: 12pt;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 9px;
+    }
+
+    a {
+      color: #176db3;
+      text-decoration: none;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 16px;
+      font-size: 9.3pt;
+    }
+
+    th,
+    td {
+      border: 1px solid #dbe5f1;
+      padding: 8px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #edf6ff;
+      color: #082b4f;
+      text-align: left;
+    }
+
+    ul {
+      margin: 7px 0 14px 18px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    pre {
+      margin: 10px 0 16px;
+      padding: 12px;
+      background: #f5f8fc;
+      border: 1px solid #dce7f4;
+      border-radius: 6px;
+      color: #1f334d;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 8.7pt;
+      line-height: 1.35;
+      white-space: pre-wrap;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0 20px;
+    }
+
+    .summary-card {
+      border: 1px solid #dbe5f1;
+      border-left: 4px solid #2598dc;
+      border-radius: 6px;
+      padding: 10px;
+      background: #fbfdff;
+    }
+
+    .summary-card strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #0d3159;
+      font-size: 10pt;
+    }
+
+    .callout {
+      margin: 12px 0 15px;
+      padding: 11px 13px;
+      border-left: 4px solid #f97316;
+      background: #fff7ed;
+      color: #48230b;
+    }
+
+    .issue {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      margin: 12px 0 18px;
+      padding: 12px;
+      border: 1px solid #dbe5f1;
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    .issue h3 {
+      margin-top: 0;
+    }
+
+    .label {
+      margin-bottom: 8px;
+      color: #5a6a82;
+      font-size: 9pt;
+    }
+
+    figure {
+      margin: 9px 0 12px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #d6e1ee;
+      border-radius: 6px;
+      background: #ffffff;
+    }
+
+    .mobile-shot {
+      max-width: 230px;
+    }
+
+    .wide-shot {
+      width: 100%;
+    }
+
+    figcaption {
+      margin-top: 5px;
+      color: #64748b;
+      font-size: 8.7pt;
+    }
+
+    .page-break {
+      break-before: page;
+      page-break-before: always;
+    }
+
+    .avoid-break {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .footer-note {
+      margin-top: 24px;
+      color: #667085;
+      font-size: 8.5pt;
+      border-top: 1px solid #d9e3f0;
+      padding-top: 8px;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .page {
+        width: auto;
+        min-height: auto;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      a {
+        color: #0c4a7e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="eyebrow">Web Development and UI/UX Internship</p>
+      <h1>JobSkillShare Week 1 UX Audit and Weekly Report</h1>
+      <div class="meta">
+        <div><strong>Intern:</strong> Faizian Ahmed Yousuf</div>
+        <div><strong>Reporting Week:</strong> Week 1</div>
+        <div><strong>Website Audited:</strong> <a href="https://www.jobskillshare.org/">jobskillshare.org</a></div>
+        <div><strong>Submission Date:</strong> July 11, 2026</div>
+      </div>
+    </header>
+
+    <section class="summary">
+      <div class="summary-card">
+        <strong>Main Focus</strong>
+        Mobile UX, homepage clarity, program discovery, registration flow, and trust signals.
+      </div>
+      <div class="summary-card">
+        <strong>Key Result</strong>
+        A single compiled Week 1 report with screenshots, findings, and recommendations.
+      </div>
+      <div class="summary-card">
+        <strong>Top Priority</strong>
+        Optimize large mobile image assets and reduce registration friction.
+      </div>
+    </section>
+
+    <section>
+      <h2>1. Weekly Task Summary</h2>
+      <p>This report compiles the Week 1 internship tasks assigned for the Web Development and UI/UX track. The main focus was to review the JobSkillShare website, understand its structure, audit the user experience across key pages, and prepare a prioritized list of improvements that can support future prototype work.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Assigned Task</th>
+            <th>Output Completed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td>Set up the development environment and review website structure, navigation, and visual hierarchy.</td>
+            <td>Development setup completed and website architecture mapped.</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>Conduct a UX audit of the homepage, including CTA placement, above-the-fold content, navigation clarity, mobile responsiveness, and load speed.</td>
+            <td>Homepage UX audit completed with screenshots and recommendations.</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>Audit program/course catalog pages for content completeness, orientation, program descriptions, enrollment flow, and visual layout.</td>
+            <td>Program and catalog page audit completed.</td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td>Audit membership and registration pages, identify sign-up friction points, missing trust signals, and suggested changes.</td>
+            <td>Membership and registration audit completed.</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>Compile one top-priority list from the audits and prepare a single weekly report.</td>
+            <td>Top 10 priority list and final weekly report completed.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>2. Development Environment Setup</h2>
+      <p>The basic development and audit environment was prepared for Week 1 work.</p>
+      <ul>
+        <li>VS Code was used for organizing notes and report files.</li>
+        <li>Browser DevTools were used for mobile viewport testing and performance review.</li>
+        <li>A GitHub repository was created for internship documentation.</li>
+        <li>Screenshots were collected for the main audit findings.</li>
+        <li>Markdown and PDF report formats were prepared for submission.</li>
+      </ul>
+      <p><strong>GitHub repository:</strong> <a href="https://github.com/syfr512/jss-web-dev-internship">https://github.com/syfr512/jss-web-dev-internship</a></p>
+    </section>
+
+    <section>
+      <h2>3. Website Structure and Navigation Review</h2>
+      <p>The website is structured around IT training programs, hands-on labs, membership access, previews, testimonials, and login/member entry points.</p>
+      <pre>Homepage
+|-- Hero section
+|   |-- Main value proposition
+|   |-- Primary CTA: Explore Programs
+|   |-- Secondary CTA: Watch Preview
+|-- Training roadmap
+|   |-- Choose a Program
+|   |-- Follow the Roadmap
+|   |-- Watch and Learn
+|   |-- Practice in Labs
+|   |-- Anytime Access
+|-- Program catalog
+|   |-- Modern IT Support Certificate Program
+|   |-- Systems Engineer Certificate Program
+|   |-- Cloud Engineer Certificate Program
+|   |-- Cybersecurity Analyst Certificate Program
+|   |-- AI Engineering and Automation Certificate Program
+|   |-- Freelancer Certificate Program
+|-- Preview and learning sections
+|-- Membership and registration flow
+|-- Footer
+    |-- Program links
+    |-- Mission
+    |-- Membership
+    |-- Free Interview Prep
+    |-- Terms
+    |-- Social links</pre>
+      <h3>Initial Observations</h3>
+      <ul>
+        <li>The homepage communicates that JobSkillShare provides job-ready IT training with labs and simulations.</li>
+        <li>The mobile layout is responsive and the main buttons are visible above the fold.</li>
+        <li>The program catalog provides useful information such as target career paths, estimated hours, and program levels.</li>
+        <li>Some content sections are dense on mobile and would benefit from stronger scanning patterns.</li>
+        <li>The enrollment and membership flow can be clearer for users who arrive from a specific program page.</li>
+      </ul>
+    </section>
+
+    <section class="page-break">
+      <h2>4. Tuesday Audit: Homepage UX</h2>
+      <h3>What Works Well</h3>
+      <ul>
+        <li>The homepage has a clear headline: job-ready skills with hands-on labs.</li>
+        <li>Primary and secondary CTAs are visible near the top of the mobile viewport.</li>
+        <li>The mobile menu is simple and easy to open.</li>
+        <li>The page uses a modern visual style with readable spacing and clear button contrast.</li>
+      </ul>
+
+      <article class="issue">
+        <h3>Issue 1: CTA Choice Could Better Match User Intent</h3>
+        <p class="label"><strong>Audit Area:</strong> CTA placement and above-the-fold content</p>
+        <figure>
+          <img class="mobile-shot" src="assets/homepage-hero-mobile.png" alt="Homepage hero on mobile">
+          <figcaption>Homepage hero in a mobile viewport.</figcaption>
+        </figure>
+        <p><strong>Problem:</strong> The hero section includes "Explore Programs" and "Watch Preview", which are helpful actions. However, users who already know they want to join do not immediately see a direct membership or sign-up action above the fold.</p>
+        <p><strong>Recommended Fix:</strong> Keep "Explore Programs" as the main CTA, but add a clear secondary path such as "Become a Member" or "Start Free" in the hero or mobile menu.</p>
+      </article>
+
+      <article class="issue">
+        <h3>Issue 2: Hero Section Has Several Competing Elements on Mobile</h3>
+        <p class="label"><strong>Audit Area:</strong> 5-second clarity and visual hierarchy</p>
+        <p><strong>Problem:</strong> The main message is understandable, but the hero also includes supporting text, two buttons, benefit chips, and the beginning of the roadmap section. On smaller mobile screens, this can make the first screen feel busy.</p>
+        <p><strong>Recommended Fix:</strong> Prioritize the headline, one short supporting line, and the primary CTA. Move secondary proof points and roadmap details slightly lower so the first view is cleaner.</p>
+      </article>
+
+      <article class="issue">
+        <h3>Issue 3: Large Image Assets Increase Mobile Payload</h3>
+        <p class="label"><strong>Audit Area:</strong> Load speed and performance</p>
+        <figure>
+          <img class="wide-shot" src="assets/network-performance-audit.png" alt="Network performance audit screenshot">
+          <figcaption>Network capture showing 23 requests and approximately 7.13 MB transferred.</figcaption>
+        </figure>
+        <p><strong>Problem:</strong> The DevTools network capture showed 23 requests and approximately 7.13 MB transferred. The page loaded in about 2.18 seconds in the captured test, but large image assets increase the mobile data cost.</p>
+        <p><strong>Recommended Fix:</strong> Compress large PNG/JPG files, serve WebP or AVIF formats where possible, and use responsive image sizes for mobile screens.</p>
+      </article>
+
+      <article class="issue">
+        <h3>Issue 4: Mobile Navigation Is Simple but Could Support Faster Discovery</h3>
+        <p class="label"><strong>Audit Area:</strong> Navigation clarity</p>
+        <figure>
+          <img class="mobile-shot" src="assets/mobile-nav-menu.png" alt="Mobile navigation menu">
+          <figcaption>Mobile navigation menu with top-level links.</figcaption>
+        </figure>
+        <p><strong>Problem:</strong> The mobile menu is clean, but "Programs" is only one general link. Users who are looking for a specific career path still need to navigate through the catalog after opening the menu.</p>
+        <p><strong>Recommended Fix:</strong> Add a simple expandable "Programs" section or a direct anchor list for major career paths. This would improve discovery without making the menu crowded.</p>
+      </article>
+    </section>
+
+    <section class="page-break">
+      <h2>5. Wednesday Audit: Program and Course Catalog Pages</h2>
+      <h3>What Works Well</h3>
+      <ul>
+        <li>Program cards clearly show the program name, target audience, level, estimated hours, and key skills.</li>
+        <li>Individual program pages include useful technical context and explain the learning path.</li>
+        <li>The "Start Learning" action is visible on program pages.</li>
+      </ul>
+
+      <article class="issue">
+        <h3>Issue 1: Catalog Needs Faster Filtering on Mobile</h3>
+        <p class="label"><strong>Audit Area:</strong> Catalog layout and orientation</p>
+        <figure>
+          <img class="mobile-shot" src="assets/homepage-catalog-mobile.jpg" alt="Program catalog on mobile">
+          <figcaption>Program catalog displayed as stacked cards on mobile.</figcaption>
+        </figure>
+        <p><strong>Problem:</strong> The catalog stacks program cards vertically on mobile. This is readable, but users may need to scroll through several cards before finding the right level or career path.</p>
+        <p><strong>Recommended Fix:</strong> Add sticky horizontal filters such as "Entry-Level", "Basic to Advanced", "Advanced", "Cybersecurity", "Cloud", and "IT Support".</p>
+      </article>
+
+      <article class="issue">
+        <h3>Issue 2: Program Descriptions Are Useful but Dense</h3>
+        <p class="label"><strong>Audit Area:</strong> Program description and visual layout</p>
+        <figure>
+          <img class="mobile-shot" src="assets/program-page-cybersecurity.png" alt="Cybersecurity program page on mobile">
+          <figcaption>Cybersecurity program page with a dense description block.</figcaption>
+        </figure>
+        <p><strong>Problem:</strong> The cybersecurity program page gives helpful details, but paragraph-style descriptions can become dense on mobile screens. Users scanning quickly may miss key points such as target role, prerequisites, hours, and outcomes.</p>
+        <p><strong>Recommended Fix:</strong> Break long descriptions into compact sections such as "Best For", "Skills Covered", "Estimated Time", "Practice Labs", and "Outcome".</p>
+      </article>
+
+      <article class="issue">
+        <h3>Issue 3: Enrollment Flow Should Preserve Program Context</h3>
+        <p class="label"><strong>Audit Area:</strong> Enrollment flow</p>
+        <p><strong>Problem:</strong> When a user chooses a program and then moves toward membership or registration, the flow should keep reminding the user which program they selected. Without this context, the user may feel they were moved into a general membership process.</p>
+        <p><strong>Recommended Fix:</strong> Carry the selected program name into the membership/registration screen. Example: "You selected Cybersecurity Analyst Certificate Program."</p>
+      </article>
+    </section>
+
+    <section class="page-break">
+      <h2>6. Thursday Audit: Membership and Registration Pages</h2>
+      <h3>What Works Well</h3>
+      <ul>
+        <li>The selected membership level and price are visible before account creation.</li>
+        <li>The form fields are clearly labeled.</li>
+        <li>A chat/help button is available, which can support users who are confused during sign-up.</li>
+      </ul>
+
+      <article class="issue">
+        <h3>Issue 1: Registration Form Has High Manual Input Effort</h3>
+        <p class="label"><strong>Audit Area:</strong> Sign-up friction</p>
+        <figure>
+          <img class="mobile-shot" src="assets/membership-signup.png" alt="Membership signup form on mobile">
+          <figcaption>Membership sign-up form in a mobile viewport.</figcaption>
+        </figure>
+        <p><strong>Problem:</strong> The mobile registration form asks for username, password, confirm password, email address, and confirm email address. This creates typing friction on mobile and increases the chance of input errors.</p>
+        <p><strong>Recommended Fix:</strong> Reduce repeated fields where possible and add optional sign-up methods such as Google, LinkedIn, or GitHub. At minimum, use clear inline validation so users can fix errors immediately.</p>
+      </article>
+
+      <article class="issue">
+        <h3>Issue 2: Discount Code Appears Before Account Creation</h3>
+        <p class="label"><strong>Audit Area:</strong> Registration flow clarity</p>
+        <p><strong>Problem:</strong> The discount code prompt appears before the account information section. This may interrupt users who do not have a discount code and are simply trying to register.</p>
+        <p><strong>Recommended Fix:</strong> Collapse the discount code field by default and place it closer to the payment step. This keeps the registration path focused.</p>
+      </article>
+
+      <article class="issue">
+        <h3>Issue 3: Trust Signals Should Be Closer to Payment and Registration CTAs</h3>
+        <p class="label"><strong>Audit Area:</strong> Trust and confidence</p>
+        <p><strong>Problem:</strong> The membership flow would benefit from clearer trust signals near the action area. Users may want reassurance about secure payment, refund/cancellation policy, support availability, and what access is included.</p>
+        <p><strong>Recommended Fix:</strong> Add short trust microcopy near the membership and payment buttons, such as secure checkout, cancel anytime, support available, access to video courses and practice labs, and trusted member statistics.</p>
+      </article>
+    </section>
+
+    <section class="page-break">
+      <h2>7. Top 10 Priority Improvements</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Priority</th>
+            <th>Area</th>
+            <th>Issue</th>
+            <th>Recommended Change</th>
+            <th>Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Performance</td><td>Mobile page transfers large image assets.</td><td>Compress images and use WebP/AVIF with responsive sizes.</td><td>High</td></tr>
+          <tr><td>2</td><td>Registration</td><td>Sign-up requires repeated manual fields.</td><td>Reduce duplicate fields and add optional social sign-in.</td><td>High</td></tr>
+          <tr><td>3</td><td>Enrollment</td><td>Program context can be lost during membership registration.</td><td>Carry selected program name into checkout/registration screens.</td><td>High</td></tr>
+          <tr><td>4</td><td>Homepage CTA</td><td>Ready-to-join users do not get a direct membership CTA above the fold.</td><td>Add "Become a Member" or "Start Free" path in hero/menu.</td><td>Medium-High</td></tr>
+          <tr><td>5</td><td>Catalog</td><td>Users must scroll through all programs on mobile.</td><td>Add filters by level, role, or category.</td><td>Medium-High</td></tr>
+          <tr><td>6</td><td>Trust</td><td>Trust signals are not close enough to payment decisions.</td><td>Add secure checkout, cancellation, support, and access details near CTAs.</td><td>Medium</td></tr>
+          <tr><td>7</td><td>Program Pages</td><td>Important details are buried in paragraph text.</td><td>Convert key details into bullets/cards for mobile scanning.</td><td>Medium</td></tr>
+          <tr><td>8</td><td>Navigation</td><td>Mobile menu has a general Programs link only.</td><td>Add expandable program shortcuts or anchor links.</td><td>Medium</td></tr>
+          <tr><td>9</td><td>Registration Flow</td><td>Discount code prompt interrupts the account form.</td><td>Collapse discount code by default and move it closer to payment.</td><td>Low-Medium</td></tr>
+          <tr><td>10</td><td>Accessibility</td><td>Some touch targets and links should be checked across mobile sizes.</td><td>Maintain at least 44-48px touch targets and strong focus states.</td><td>Low-Medium</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="avoid-break">
+      <h2>8. Overall Conclusion</h2>
+      <p>The JobSkillShare website already has a strong foundation: it explains the training focus, shows clear program options, includes mobile-friendly layouts, and provides direct actions for exploring courses. The main improvement opportunities are in reducing friction, improving mobile scanning, making enrollment context clearer, and optimizing performance for mobile visitors.</p>
+      <div class="callout">
+        The most important changes to prioritize are image optimization, a smoother registration flow, clearer program-to-membership continuity, stronger trust signals near payment actions, and faster filtering within the program catalog.
+      </div>
+      <p class="footer-note">Prepared for Week 1 internship reporting. Screenshots were captured from the JobSkillShare website using mobile viewport testing.</p>
+    </section>
+  </main>
+</body>
+</html>
