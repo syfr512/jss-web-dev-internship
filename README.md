@@ -1,20 +1,20 @@
-# JobSkillShare Week 1 Internship Report
+# JobSkillShare Web Development and UI/UX Internship
 
-This repository contains the Week 1 Web Development and UI/UX internship audit for JobSkillShare.
+This repository contains weekly Web Development and UI/UX internship work for JobSkillShare.
 
 ## Files
 
-- `WEEK1_REPORT.md` - editable Markdown version of the weekly report.
-- `WEEK1_REPORT.html` - styled report source used for PDF export.
-- `WEEK1_REPORT.pdf` - formatted PDF version for submission.
+- `WEEK1_REPORT.md` - editable Markdown version of the Week 1 UX audit report.
+- `WEEK1_REPORT.html` - styled Week 1 report source used for PDF export.
+- `WEEK1_REPORT.pdf` - formatted Week 1 PDF report.
+- `WEEK2_REPORT.md` - editable Markdown version of the Week 2 prototype report.
+- `WEEK2_REPORT.html` - styled Week 2 report source used for PDF export.
+- `WEEK2_REPORT.pdf` - formatted Week 2 PDF report.
+- `index.html` - Week 2 responsive homepage prototype.
 - `SITEMAP.md` - website structure map reviewed during the audit.
-- `assets/` - screenshots used as audit evidence.
+- `assets/` - screenshots used as audit and prototype evidence.
 
-## Scope Covered
+## Scope Covered So Far
 
-- Development environment setup
-- Website structure and navigation review
-- Homepage UX audit
-- Program and catalog page UX audit
-- Membership and registration UX audit
-- Top 10 prioritized improvement list
+- Week 1: Website structure review, UX audit, and prioritized improvement list.
+- Week 2: Mobile-first wireframe plan, responsive homepage prototype, and prototype report.
