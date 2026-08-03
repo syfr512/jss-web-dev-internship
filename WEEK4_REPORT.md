@@ -56,6 +56,15 @@ After reviewing the most recent updates on the JobSkillShare website, I audited 
 - Used the *Inter* font family for high legibility and a modern tech feel.
 - Enhanced CTA buttons with gradient backgrounds, hover elevation effects, and distinct drop shadows to maximize conversion rates.
 
+### **Before & After Visual Comparison**
+*Note: Below are the screenshots of the old live registration flow vs the newly developed streamlined prototype.*
+
+**Old Registration Experience (Live Site)**
+![Old Website](old_website.png)
+
+**New Streamlined Prototype**
+![New Prototype](new_prototype.png)
+
 ---
 
 ## 3. Affiliate Link Integration & Flow Testing

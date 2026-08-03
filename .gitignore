@@ -1,0 +1,5 @@
+node_modules/
+package*.json
+generate_pdf.js
+take_screenshots.js
+temp_report.html
