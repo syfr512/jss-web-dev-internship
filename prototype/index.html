@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership & Registration - JobSkillShare</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://www.jobskillshare.org/wp-content/uploads/2021/11/jss-logo-2021-white.png" alt="JobSkillShare Logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzAiPjx0ZXh0IHg9IjAiIHk9IjIwIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiNmZmYiPkpvYlNraWxsU2hhcmU8L3RleHQ+PC9zdmc+';">
+        </div>
+        <a href="https://www.jobskillshare.org/?ref=syfr#/membership" class="nav-link">Back to Home</a>
+    </nav>
+
+    <main class="container">
+        
+        <div class="left-panel">
+            <div class="program-context">
+                <span class="badge"><i class="fas fa-check-circle"></i> Selected Program</span>
+                <h2>Cybersecurity Analyst Certificate Program</h2>
+                <p>Complete your registration to start learning today.</p>
+            </div>
+
+            <div class="benefits-list">
+                <h3>What's included in Premium Membership:</h3>
+                <ul>
+                    <li><i class="fas fa-laptop-code"></i> Unlimited Access to 100+ IT Courses</li>
+                    <li><i class="fas fa-server"></i> Real-world Practice Labs & Simulations</li>
+                    <li><i class="fas fa-certificate"></i> Verified Certificates of Completion</li>
+                    <li><i class="fas fa-headset"></i> 24/7 Mentorship & Support</li>
+                    <li><i class="fas fa-briefcase"></i> Resume Building & Interview Prep</li>
+                </ul>
+            </div>
+
+            <div class="trust-signals">
+                <div class="trust-stat">
+                    <h4>60,000+</h4>
+                    <p>Active Members</p>
+                </div>
+                <div class="trust-stat">
+                    <h4>120+</h4>
+                    <p>Countries</p>
+                </div>
+                <div class="trust-stat">
+                    <h4>4.8/5</h4>
+                    <p>TrustPilot Rating</p>
+                </div>
+            </div>
+            
+            <div class="secure-badges">
+                <span><i class="fas fa-lock"></i> Secure Checkout</span>
+                <span><i class="fas fa-undo"></i> 7-Day Money-Back Guarantee</span>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="registration-card glass-panel">
+                <div class="card-header">
+                    <h2>Create your account</h2>
+                    <p>Join the community and start your IT career journey.</p>
+                </div>
+
+                <div class="social-login">
+                    <button class="social-btn google" aria-label="Sign up with Google">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button class="social-btn github" aria-label="Sign up with GitHub">
+                        <i class="fab fa-github"></i> GitHub
+                    </button>
+                    <button class="social-btn linkedin" aria-label="Sign up with LinkedIn">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                    </button>
+                </div>
+
+                <div class="divider">
+                    <span>or register with email</span>
+                </div>
+
+                <form id="registrationForm" onsubmit="event.preventDefault(); window.location.href='https://www.jobskillshare.org/?ref=syfr#/membership';">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" placeholder="Doe" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-input">
+                            <input type="password" id="password" placeholder="Create a strong password" required>
+                            <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="discount-section">
+                        <button type="button" class="discount-toggle" onclick="toggleDiscount()">
+                            Have a discount code? <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="discount-input-container" id="discountContainer">
+                            <input type="text" placeholder="Enter code">
+                            <button type="button" class="apply-btn">Apply</button>
+                        </div>
+                    </div>
+
+                    <div class="order-summary">
+                        <div class="summary-row">
+                            <span>Premium Membership (Monthly)</span>
+                            <span>$50.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total Due Today</span>
+                            <span>$50.00</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn cta-btn">
+                        Complete Enrollment & Pay <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <p class="terms">By completing enrollment, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
