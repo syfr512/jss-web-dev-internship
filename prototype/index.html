@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Membership & Registration - JobSkillShare</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -14,135 +13,309 @@
     <div class="background-elements">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
     </div>
 
     <nav class="navbar">
         <div class="logo">
             <img src="https://www.jobskillshare.org/wp-content/uploads/2021/11/jss-logo-2021-white.png" alt="JobSkillShare Logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzAiPjx0ZXh0IHg9IjAiIHk9IjIwIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiNmZmYiPkpvYlNraWxsU2hhcmU8L3RleHQ+PC9zdmc+';">
         </div>
-        <a href="https://www.jobskillshare.org/?ref=syfr#/membership" class="nav-link">Back to Home</a>
+        <div class="nav-links">
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+            <a href="https://www.jobskillshare.org/?ref=syfr#/membership" class="nav-link cta-nav">Member Login</a>
+        </div>
     </nav>
 
-    <main class="container">
-        
-        <div class="left-panel">
-            <div class="program-context">
-                <span class="badge"><i class="fas fa-check-circle"></i> Selected Program</span>
-                <h2>Cybersecurity Analyst Certificate Program</h2>
-                <p>Complete your registration to start learning today.</p>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge"><i class="fas fa-star"></i> Trusted by 60,000+ IT Professionals</span>
+            <h1>Unlock Your IT Career with Job-Ready Skills</h1>
+            <p>Get unlimited access to all certificate programs, hands-on practice labs, and premium career resources. Everything you need in one membership.</p>
+            <div class="hero-actions">
+                <a href="#pricing" class="cta-btn primary-btn">View Membership Plans <i class="fas fa-arrow-down"></i></a>
+                <a href="#features" class="cta-btn secondary-btn">See What's Included</a>
+            </div>
+            <div class="trust-logos">
+                <p>Alumni work at top companies:</p>
+                <div class="logos-grid">
+                    <i class="fab fa-microsoft"></i>
+                    <i class="fab fa-amazon"></i>
+                    <i class="fab fa-google"></i>
+                    <i class="fab fa-apple"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="section-header">
+            <h2>Everything You Need to Succeed</h2>
+            <p>Stop watching and start doing. Our platform is built for practical, real-world IT training.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card glass-panel">
+                <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Unlimited Video Courses</h3>
+                <p>Access hundreds of hours of step-by-step IT training designed around real job tasks and scenarios.</p>
+            </div>
+            <div class="feature-card glass-panel">
+                <div class="feature-icon"><i class="fas fa-server"></i></div>
+                <h3>Real Hardware Labs</h3>
+                <p>Practice in fully-equipped live lab environments. No simulations, just real routers, switches, and servers.</p>
+            </div>
+            <div class="feature-card glass-panel">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Custom Sandboxes</h3>
+                <p>Build and break things safely. Launch custom sandbox environments to test your own configurations.</p>
+            </div>
+            <div class="feature-card glass-panel">
+                <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                <h3>Verified Certificates</h3>
+                <p>Earn industry-recognized certificates of completion to showcase your job-ready skills to employers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="section-header">
+            <h2>Choose Your Career Path</h2>
+            <p>Simple, transparent pricing. Invest in your career today.</p>
+        </div>
+        <div class="pricing-grid">
+            <!-- Plus Plan -->
+            <div class="pricing-card glass-panel">
+                <div class="plan-header">
+                    <h3>Plus Membership</h3>
+                    <div class="price"><span>$</span>149<span>/year</span></div>
+                    <p>Perfect for beginners starting their IT journey.</p>
+                </div>
+                <div class="plan-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Unlimited Video Courses</li>
+                        <li><i class="fas fa-check"></i> Step-by-step Learning Paths</li>
+                        <li><i class="fas fa-check"></i> Community Support</li>
+                        <li><i class="fas fa-check"></i> Course Certificates</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Practice Labs Access</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Custom Sandbox</li>
+                    </ul>
+                </div>
+                <a href="#registration" class="cta-btn secondary-btn select-plan-btn" data-plan="Plus" data-price="$149.00">Select Plus</a>
             </div>
 
-            <div class="benefits-list">
-                <h3>What's included in Premium Membership:</h3>
-                <ul>
-                    <li><i class="fas fa-laptop-code"></i> Unlimited Access to 100+ IT Courses</li>
-                    <li><i class="fas fa-server"></i> Real-world Practice Labs & Simulations</li>
-                    <li><i class="fas fa-certificate"></i> Verified Certificates of Completion</li>
-                    <li><i class="fas fa-headset"></i> 24/7 Mentorship & Support</li>
-                    <li><i class="fas fa-briefcase"></i> Resume Building & Interview Prep</li>
-                </ul>
+            <!-- Premium Plan -->
+            <div class="pricing-card glass-panel popular">
+                <div class="popular-badge">Most Popular</div>
+                <div class="plan-header">
+                    <h3>Premium Membership</h3>
+                    <div class="price"><span>$</span>299<span>/year</span></div>
+                    <p>For serious professionals who need hands-on experience.</p>
+                </div>
+                <div class="plan-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> <strong>Everything in Plus</strong></li>
+                        <li><i class="fas fa-check"></i> 12 Months Practice Labs Access</li>
+                        <li><i class="fas fa-check"></i> Live Router/Switch Sandboxes</li>
+                        <li><i class="fas fa-check"></i> IT Resume Reviews</li>
+                        <li><i class="fas fa-check"></i> Priority Mentorship Support</li>
+                        <li><i class="fas fa-check"></i> Job Interview Prep Kits</li>
+                    </ul>
+                </div>
+                <a href="#registration" class="cta-btn primary-btn select-plan-btn" data-plan="Premium" data-price="$299.00">Select Premium</a>
             </div>
+        </div>
+    </section>
 
-            <div class="trust-signals">
-                <div class="trust-stat">
-                    <h4>60,000+</h4>
-                    <p>Active Members</p>
-                </div>
-                <div class="trust-stat">
-                    <h4>120+</h4>
-                    <p>Countries</p>
-                </div>
-                <div class="trust-stat">
-                    <h4>4.8/5</h4>
-                    <p>TrustPilot Rating</p>
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="section-header">
+            <h2>Success Stories</h2>
+            <p>Don't just take our word for it. See what our members achieve.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card glass-panel">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"The practice labs were a game-changer. I went from reading about active directory to actually configuring it. Landed my first Help Desk role in 2 months!"</p>
+                <div class="author">
+                    <div class="avatar"><i class="fas fa-user-circle"></i></div>
+                    <div class="info">
+                        <h4>Sarah Jenkins</h4>
+                        <span>IT Support Specialist</span>
+                    </div>
                 </div>
             </div>
+            <div class="testimonial-card glass-panel">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"JobSkillShare bridges the gap between certifications and real jobs. The premium membership sandbox allowed me to test firewall rules without fear."</p>
+                <div class="author">
+                    <div class="avatar"><i class="fas fa-user-circle"></i></div>
+                    <div class="info">
+                        <h4>David Chen</h4>
+                        <span>Systems Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item glass-panel">
+                <div class="faq-question">
+                    <h3>Do I get access to real hardware or just simulations?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>With our Premium Membership, you get access to real, live hardware. Our practice labs run on actual servers, routers, and switches, giving you authentic experience rather than just simulations.</p>
+                </div>
+            </div>
+            <div class="faq-item glass-panel">
+                <div class="faq-question">
+                    <h3>Is there a refund policy?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We offer a 7-day money-back guarantee. If you decide the platform isn't for you within the first 7 days, simply contact support for a full refund.</p>
+                </div>
+            </div>
+            <div class="faq-item glass-panel">
+                <div class="faq-question">
+                    <h3>Can I upgrade from Plus to Premium later?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. You can upgrade from Plus to Premium at any time from your account dashboard. You will only pay the prorated difference.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="registration-section">
+        <div class="container registration-container">
             
-            <div class="secure-badges">
-                <span><i class="fas fa-lock"></i> Secure Checkout</span>
-                <span><i class="fas fa-undo"></i> 7-Day Money-Back Guarantee</span>
+            <div class="left-panel">
+                <div class="program-context">
+                    <span class="badge"><i class="fas fa-check-circle"></i> Final Step</span>
+                    <h2>Complete Your Enrollment</h2>
+                    <p>Join 60,000+ professionals advancing their careers.</p>
+                </div>
+
+                <div class="trust-signals vertical">
+                    <div class="trust-stat">
+                        <h4>60,000+</h4>
+                        <p>Active Members</p>
+                    </div>
+                    <div class="trust-stat">
+                        <h4>120+</h4>
+                        <p>Countries</p>
+                    </div>
+                    <div class="trust-stat">
+                        <h4>4.8/5</h4>
+                        <p>TrustPilot Rating</p>
+                    </div>
+                </div>
+                
+                <div class="secure-badges">
+                    <span><i class="fas fa-lock"></i> 256-bit Secure Checkout</span>
+                    <span><i class="fas fa-undo"></i> 7-Day Money-Back Guarantee</span>
+                </div>
             </div>
-        </div>
 
-        <div class="right-panel">
-            <div class="registration-card glass-panel">
-                <div class="card-header">
-                    <h2>Create your account</h2>
-                    <p>Join the community and start your IT career journey.</p>
-                </div>
-
-                <div class="social-login">
-                    <button class="social-btn google" aria-label="Sign up with Google">
-                        <i class="fab fa-google"></i> Google
-                    </button>
-                    <button class="social-btn github" aria-label="Sign up with GitHub">
-                        <i class="fab fa-github"></i> GitHub
-                    </button>
-                    <button class="social-btn linkedin" aria-label="Sign up with LinkedIn">
-                        <i class="fab fa-linkedin-in"></i> LinkedIn
-                    </button>
-                </div>
-
-                <div class="divider">
-                    <span>or register with email</span>
-                </div>
-
-                <form id="registrationForm" onsubmit="event.preventDefault(); window.location.href='https://www.jobskillshare.org/?ref=syfr#/membership';">
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" placeholder="John" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" placeholder="Doe" required>
-                        </div>
+            <div class="right-panel">
+                <div class="registration-card glass-panel">
+                    <div class="card-header">
+                        <h2>Create your account</h2>
+                        <p>Join the community and start your IT career journey.</p>
                     </div>
 
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="john@example.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <div class="password-input">
-                            <input type="password" id="password" placeholder="Create a strong password" required>
-                            <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="discount-section">
-                        <button type="button" class="discount-toggle" onclick="toggleDiscount()">
-                            Have a discount code? <i class="fas fa-chevron-down"></i>
+                    <div class="social-login">
+                        <button class="social-btn google" aria-label="Sign up with Google">
+                            <i class="fab fa-google"></i> Google
                         </button>
-                        <div class="discount-input-container" id="discountContainer">
-                            <input type="text" placeholder="Enter code">
-                            <button type="button" class="apply-btn">Apply</button>
-                        </div>
+                        <button class="social-btn github" aria-label="Sign up with GitHub">
+                            <i class="fab fa-github"></i> GitHub
+                        </button>
                     </div>
 
-                    <div class="order-summary">
-                        <div class="summary-row">
-                            <span>Premium Membership (Monthly)</span>
-                            <span>$50.00</span>
-                        </div>
-                        <div class="summary-row total">
-                            <span>Total Due Today</span>
-                            <span>$50.00</span>
-                        </div>
+                    <div class="divider">
+                        <span>or register with email</span>
                     </div>
 
-                    <button type="submit" class="submit-btn cta-btn">
-                        Complete Enrollment & Pay <i class="fas fa-arrow-right"></i>
-                    </button>
-                    <p class="terms">By completing enrollment, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
-                </form>
+                    <form id="registrationForm" onsubmit="event.preventDefault(); window.location.href='https://www.jobskillshare.org/?ref=syfr#/membership';">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" placeholder="Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="password-input">
+                                <input type="password" id="password" placeholder="Create a strong password" required>
+                                <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="discount-section">
+                            <button type="button" class="discount-toggle" onclick="toggleDiscount()">
+                                Have a discount code? <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="discount-input-container" id="discountContainer">
+                                <input type="text" placeholder="Enter code">
+                                <button type="button" class="apply-btn">Apply</button>
+                            </div>
+                        </div>
+
+                        <div class="order-summary">
+                            <div class="summary-row">
+                                <span>Selected Plan:</span>
+                                <span id="selectedPlanName" class="highlight-plan">Premium Membership</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total Due Today</span>
+                                <span id="selectedPlanPrice">$299.00</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn cta-btn primary-btn">
+                            Complete Enrollment & Pay <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <p class="terms">By completing enrollment, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                    </form>
+                </div>
             </div>
-        </div>
 
-    </main>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 JobSkillShare. All rights reserved.</p>
+        <p>
+            <a href="https://www.jobskillshare.org/?ref=syfr#/membership">Affiliate Sign-Up</a> |
+            <a href="#">Privacy</a> | 
+            <a href="#">Terms</a>
+        </p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

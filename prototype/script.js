@@ -1,9 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Hide discount input container initially by setting display block but keeping it visually hidden by CSS
+    // Hide discount input container initially
     const discountContainer = document.getElementById('discountContainer');
     if (discountContainer) {
         discountContainer.style.display = 'none';
     }
+
+    // FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Close other items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
+
+    // Pricing Plan Selection Logic
+    const planButtons = document.querySelectorAll('.select-plan-btn');
+    const selectedPlanName = document.getElementById('selectedPlanName');
+    const selectedPlanPrice = document.getElementById('selectedPlanPrice');
+
+    planButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const plan = btn.getAttribute('data-plan');
+            const price = btn.getAttribute('data-price');
+            
+            // Update order summary in registration form
+            if (selectedPlanName && selectedPlanPrice) {
+                selectedPlanName.textContent = plan + ' Membership';
+                selectedPlanPrice.textContent = price;
+            }
+        });
+    });
 });
 
 function togglePassword() {
